@@ -1,0 +1,96 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     rjad_keyword_features-weka.filters.unsupervised.attribute.NumericToNominal-Rfirst-last
+Instances:    200
+Attributes:   13
+              prevword
+              nextword
+              prevpos
+              nextpos
+              prevnum
+              nextnum
+              number
+              class
+              class_1
+              class_3
+              class_4
+              class_5
+              class_8
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+number = plur
+|   class_5 = 0
+|   |   class_4 = 0
+|   |   |   class_1 = 0: 4 (22.0/10.0)
+|   |   |   class_1 = 1: 1 (17.0)
+|   |   class_4 = 1: 4 (14.0)
+|   class_5 = 1: 5 (2.0)
+number = sing
+|   nextnum = plur
+|   |   class_8 = 0
+|   |   |   prevpos = NOUN: 3 (16.58/2.41)
+|   |   |   prevpos = ADJF
+|   |   |   |   class_1 = 0
+|   |   |   |   |   class_3 = 0: 1 (7.02/1.19)
+|   |   |   |   |   class_3 = 1: 3 (3.0)
+|   |   |   |   class_1 = 1: 1 (8.53)
+|   |   |   prevpos = PREP: 3 (26.27/1.0)
+|   |   |   prevpos = VERB: 3 (15.15)
+|   |   |   prevpos = CONJ: 3 (9.09)
+|   |   |   prevpos = INFN: 3 (4.04)
+|   |   |   prevpos = PRCL: 3 (1.01)
+|   |   |   prevpos = UNKN: 3 (0.0)
+|   |   |   prevpos = NUMR: 1 (3.74/0.04)
+|   |   |   prevpos = ADVB: 3 (1.01)
+|   |   |   prevpos = PRTS: 3 (2.02)
+|   |   |   prevpos = ADJS: 3 (1.01)
+|   |   class_8 = 1: 8 (4.0/1.0)
+|   nextnum = none
+|   |   class_5 = 0: 1 (31.8/4.0)
+|   |   class_5 = 1: 5 (2.0)
+|   nextnum = sing: 1 (8.72/3.0)
+
+Number of Leaves  : 	22
+
+Size of the tree : 	32
+
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         161               80.5    %
+Incorrectly Classified Instances        39               19.5    %
+Kappa statistic                          0.6914
+Mean absolute error                      0.0976
+Root mean squared error                  0.244 
+Relative absolute error                 37.7418 %
+Root relative squared error             68.0613 %
+Total Number of Instances              200     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.805    0.161    0.776      0.805    0.790      0.641    0.901     0.819     1
+                 0.904    0.077    0.893      0.904    0.898      0.825    0.954     0.936     3
+                 0.769    0.057    0.667      0.769    0.714      0.670    0.936     0.796     4
+                 0.000    0.000    0.000      0.000    0.000      0.000    0.854     0.171     5
+                 0.000    0.005    0.000      0.000    0.000      -0.010   0.458     0.020     8
+Weighted Avg.    0.805    0.106    0.776      0.805    0.790      0.692    0.917     0.832     
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e   <-- classified as
+ 66  7  9  0  0 |  a = 1
+  7 75  0  0  1 |  b = 3
+  6  0 20  0  0 |  c = 4
+  4  0  1  0  0 |  d = 5
+  2  2  0  0  0 |  e = 8
+
